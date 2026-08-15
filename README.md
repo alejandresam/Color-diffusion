@@ -3,13 +3,18 @@
 A proof-of-concept diffusion model for colorizing black-and-white images.
 
 <p align="center">
-<img src="https://github.com/ErwannMillon/Color-diffusion/blob/main/visualization/inference/total_1.gif" width="128" height="128"/>
-<img src="https://github.com/ErwannMillon/Color-diffusion/blob/main/visualization/inference/total_2.gif" width="128" height="128"/>
-<img src="https://github.com/ErwannMillon/Color-diffusion/blob/main/visualization/inference/total_3.gif" width="128" height="128"/>
-<img src="https://github.com/ErwannMillon/Color-diffusion/blob/main/visualization/inference/total_4.gif" width="128" height="128"/>
-<img src="https://github.com/ErwannMillon/Color-diffusion/blob/main/visualization/inference/total_8.gif" width="128" height="128"/>
-<img src="https://github.com/ErwannMillon/Color-diffusion/blob/main/visualization/inference/total_90.gif" width="128" height="128"/>
+  <img src="input_images/bwface.jpg" width="180" alt="Black and white input image" />
+  <img src="visualization/forward_diff.gif" width="180" alt="Forward diffusion visualization" />
+  <img src="visualization/denoising.gif" width="180" alt="Denoising visualization" />
 </p>
+
+## Snapshot
+
+- LAB color space pipeline
+- UNet-based denoising model
+- Gradio demo
+- Training, inference, and visualization scripts
+- Example notebooks for experimentation
 
 ## Overview
 
@@ -24,18 +29,16 @@ The core idea is simple:
 
 The model is conditioned on features extracted from the grayscale channel, which helps it keep the colorization aligned with the input image.
 
-## What’s Included
+## Repository Map
 
-- Training code
-- Inference scripts
-- A Gradio demo
-- Dataset utilities
-- Visualization helpers
-- Example notebooks
-
-## Why It’s Interesting
-
-This was intentionally scoped as a proof of concept, so the results are basic, but it captures the full shape of a diffusion pipeline: data preparation, noising, conditioning, denoising, and visual evaluation.
+- `app.py` - Gradio demo entry point
+- `train.py` - training script
+- `inference.py` - image colorization inference
+- `dataset.py` - dataset helpers
+- `diffusion.py` and `denoising.py` - diffusion and denoising logic
+- `visualization/` - generated examples and process visualizations
+- `input_images/` - example grayscale inputs
+- `configs/` - configuration files
 
 ## Usage
 
